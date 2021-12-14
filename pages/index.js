@@ -1,14 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import About from "../components/About";
-import Footer from "../components/Footer";
 import HomePage from "../components/HomePage";
 import NavBar from "../components/navBar/NavBar";
-import Title from "../components/Title";
 import Projects from "../components/projects/Projects";
 import styled from "styled-components";
 import Skills from "../components/Skills/Skills";
 import Contact from "../components/Contact";
-import About2 from "../components/About2";
 
 const Container = styled.div`
   scroll-behavior: smooth;
@@ -50,7 +47,6 @@ export default function Home() {
         />
         <div ref={aboutCntnrRef}>
           <About screen={screen} scroll={scroll} />
-          {/* <About2  screen={screen} scroll={scroll} />  */}
         </div>
         <Projects screen={screen} scroll={scroll} />
         <Skills screen={screen} scroll={scroll} />

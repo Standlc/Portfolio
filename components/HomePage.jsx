@@ -14,7 +14,6 @@ const Container = styled.div`
   position: relative;
   z-index: 99;
   scroll-behavior: smooth;
-
 `;
 const Left = styled.div`
   width: 100%;
@@ -154,7 +153,7 @@ const HomePage = ({ scroll, screen, aboutCntnrRef }) => {
 
   return (
     <>
-      <Container id='home' ref={container} theme={theme}>
+      <Container id="home" ref={container} theme={theme}>
         <Left theme={theme}>
           <TitleContainer ref={introContainer} theme={theme}>
             <Greeting>

@@ -71,7 +71,6 @@ const Link = styled.div`
 const NavBarWide = ({ scroll }) => {
   const { theme, toggleTheme, language, toggleLanguage } =
     useContext(ThemeContext);
-  const [switched, setSwitched] = useState(false);
   const linksWrapperRef = useRef();
 
   const handleLanguage = () => {
