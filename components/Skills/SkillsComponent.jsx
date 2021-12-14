@@ -113,7 +113,7 @@ const SkillsComponent = ({ flexEnd, title, data, screen, scroll }) => {
       </TitleWrapper>
       <SkillsContainer ref={SkillsRef}>
         {data.map((skill) => (
-          <SkillWrapper flexEnd={flexEnd}>
+          <SkillWrapper key={skill.name} flexEnd={flexEnd}>
             <SubTitle>{skill.name}</SubTitle>
             {skill.logo && <Logo src={skill.logo} />}
           </SkillWrapper>

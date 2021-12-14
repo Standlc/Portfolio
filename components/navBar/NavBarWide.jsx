@@ -96,7 +96,7 @@ const NavBarWide = ({ scroll }) => {
       <Right ref={linksWrapperRef}>
         <LinksWrapper theme={theme}>
           {navBarData[language].map((item) => (
-            <Link onClick={() => handleScroll(item.id)}>
+            <Link key={item.id} onClick={() => handleScroll(item.id)}>
               {item.title}
               <Underline theme={theme} />
             </Link>

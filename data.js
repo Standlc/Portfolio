@@ -85,7 +85,7 @@ export const projectsData = [
       },
     ],
     link: "https://github.com/Standlc/Sosa",
-    images: ["/sosa1.png", "/sosa3.png", "/sosa5.png", "./sosa4.png"],
+    images: ["/sosa1.png", "/sosa2.png", "/sosa3.png", "./sosa4.png"],
     side: "left",
   },
   {

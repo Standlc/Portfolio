@@ -124,6 +124,7 @@ const NavBarSmall = ({ screen, scroll }) => {
       <LinksWrapper theme={theme} ref={linksWrapperRef}>
         {navBarData[language].map((item) => (
           <Link
+            key={item.id}
             showNav={showNav}
             onClick={() => handleScroll(item.id)}
             theme={theme}

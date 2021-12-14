@@ -53,7 +53,7 @@ const DescritpionContainer = styled.div`
   position: relative;
   overflow: hidden;
 `;
-const Description = styled.p`
+const Description = styled.div`
   line-height: 2;
   font-size: 22px;
   font-weight: 400;
@@ -209,7 +209,7 @@ const Project = ({ scroll, screen, project }) => {
               {project.description[language]}
               <Technologies>
                 {project.technologies.map((item) => (
-                  <Technology theme={theme}>
+                  <Technology key={item.name} theme={theme}>
                     {item.name}
                     <Logo src={item.logo} />
                   </Technology>
