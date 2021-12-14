@@ -21,5 +21,8 @@
     "babel-plugin-styled-components": "^1.13.3",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.3"
+  },
+  "rules": {
+    "react/no-unescaped-entities": "off"
   }
 }

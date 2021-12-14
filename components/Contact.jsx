@@ -11,9 +11,11 @@ import LinkIcon from "@mui/icons-material/Link";
 const translations = {
   EN: {
     message: "Click to copy",
+    title: ["Let's", "Get In", "Touch"],
   },
   FR: {
     message: "Clickez pour copier",
+    title: ["Mettons", "Nous en", "Contact"],
   },
 };
 
@@ -162,9 +164,9 @@ const Contact = ({ screen, scroll }) => {
   return (
     <Container id="contact" theme={theme} ref={containerRef}>
       <Wrapper ref={wrapperRef}>
-        <Title ref={line1Ref}>Let's</Title>
-        <Title ref={line2Ref}>Get In</Title>
-        <Title ref={line3Ref}>Touch.</Title>
+        <Title ref={line1Ref}>{translations[language].title[0]}</Title>
+        <Title ref={line2Ref}>{translations[language].title[1]}</Title>
+        <Title ref={line3Ref}>{translations[language].title[2]}</Title>
         <ContactItems>
           <ItemWrapper theme={theme} onClick={handleCopy}>
             <ButtonBg theme={theme} />
@@ -178,7 +180,12 @@ const Contact = ({ screen, scroll }) => {
             </RightLogo>
           </ItemWrapper>
 
-          <ItemWrapper href='https://github.com/Standlc' target='_blank' invert theme={theme}>
+          <ItemWrapper
+            href="https://github.com/Standlc"
+            target="_blank"
+            invert
+            theme={theme}
+          >
             <ItemLogo>
               <GitHubIcon sx={{ fontSize: 35 }} />
             </ItemLogo>
