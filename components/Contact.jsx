@@ -158,7 +158,7 @@ const Contact = ({ screen, scroll }) => {
 
   //COPY
   const handleCopy = async () => {
-    // await navigator.clipboard.writeText(emailRef.current.innerText);
+    await navigator.clipboard.writeText(emailRef.current.innerText);
   };
 
   return (
