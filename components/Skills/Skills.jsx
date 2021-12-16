@@ -10,7 +10,7 @@ const translations = {
     title: "/Skills & /Technologies",
   },
   FR: {
-    title: "/Compétances & /Technologies",
+    title: "/Compétences & /Technologies",
   },
 };
 
@@ -41,7 +41,7 @@ const Title = styled.div`
   font-size: 90px;
   opacity: 0.7;
   ${mid({ fontSize: "80px" })}
-  ${mobile({ fontSize: "48px" })}
+  ${mobile({ fontSize: "50px" })}
 `;
 const BottomContainer = styled.div``;
 const Top = styled.div`

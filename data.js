@@ -11,10 +11,10 @@ export const frontSkillsData = [
     name: "TypeScript",
     logo: "typescript-logo.png",
   },
-  {
-    name: "Redux",
-    logo: "redux-logo.png",
-  },
+  // {
+  //   name: "Redux",
+  //   logo: "redux-logo.png",
+  // },
 ];
 export const backSkillsData = [
   {
@@ -56,7 +56,7 @@ export const projectsData = [
         logo: "",
       },
     ],
-    link: "https://github.com/Standlc/Gramsta",
+    link: "https://github.com/Standlc/Gramsta/tree/main/api",
     images: ["/gramsta1.png", "/gramsta2.png", "/gramsta3.png"],
     side: "right",
   },
@@ -68,7 +68,7 @@ export const projectsData = [
     },
     description: {
       EN: "Search clothes by category, filter your research and add items to your cart.",
-      FR: "Recherchez des vêtements par categorie, filtrez vos recherches et ajoutez des articles a votre panier.",
+      FR: "Recherchez des vêtements par categorie, filtrez vos recherches et ajoutez des articles à votre panier.",
     },
     technologies: [
       {
@@ -100,10 +100,6 @@ export const projectsData = [
     },
     technologies: [
       {
-        name: "React.js",
-        logo: "./react-logo.png",
-      },
-      {
         name: "TypeScript",
         logo: "./typescript-logo.png",
       },
@@ -112,8 +108,8 @@ export const projectsData = [
         logo: "",
       },
     ],
-    webSiteLink: "https://notion-clone-eight.vercel.app/",
-    link: "https://github.com/Standlc/Gramsta",
+    webSiteLink: "https://notion-clone-standlc.vercel.app",
+    link: "https://github.com/Standlc/Notion-clone",
     images: ["/notion1.jpg", "/notion2.jpg"],
     side: "right",
   },

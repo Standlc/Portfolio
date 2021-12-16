@@ -12,7 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   width: 100%;
   background-color: ${(props) => props.theme.background};
-  /* justify-content: flex-start; */
+  padding-bottom: 100px;
   align-items: center;
 `;
 const Projects = ({ scroll, screen }) => {

@@ -61,7 +61,7 @@ const ButtonBg = styled.div`
   top: 0;
   left: 0;
   transform: translateX(-100%);
-  transition: all 600ms;
+  transition: transform ease-out 700ms;
 `;
 const Message = styled.p`
   position: absolute;
@@ -79,9 +79,8 @@ const ItemWrapper = styled.a`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
-  border-radius: 20px;
+  border-radius: 18px;
   cursor: pointer;
-  overflow: hidden;
   position: relative;
   text-decoration: none;
   border: 1px solid ${(props) => props.theme.color};
@@ -90,12 +89,13 @@ const ItemWrapper = styled.a`
   color: ${(props) =>
     props.invert ? props.theme.background : props.theme.color};
   &:hover ${ButtonBg} {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   &:hover ${Message} {
     opacity: 1;
   }
   transition: all 500ms;
+  overflow: hidden;
 `;
 const ItemLogo = styled.div`
   padding-left: 20px;
@@ -158,7 +158,7 @@ const Contact = ({ screen, scroll }) => {
 
   //COPY
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(emailRef.current.innerText);
+    // await navigator.clipboard.writeText(emailRef.current.innerText);
   };
 
   return (

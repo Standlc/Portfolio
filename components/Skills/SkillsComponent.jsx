@@ -26,9 +26,6 @@ const UnderLine = styled.div`
   transition: all 100ms;
 `;
 const SkillsContainer = styled.div`
-  background: linear-gradient(45deg, rgb(0, 255, 157), rgb(140, 0, 255));
-  -webkit-background-clip: text;
-  color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,6 +40,9 @@ const SkillWrapper = styled.div`
   margin-bottom: 30px;
 `;
 const SubTitle = styled.p`
+ background: linear-gradient(45deg, rgb(0, 255, 255), rgb(0, 81, 255));
+  -webkit-background-clip: text;
+  color: transparent;
   font-size: 75px;
   font-weight: 500;
   margin-right: 20px;

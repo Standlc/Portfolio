@@ -5,7 +5,7 @@ const lightTheme = {
   color: "rgb(15, 15, 15)",
   background: "white",
   mid: "rgb(170, 170, 170)",
-  transparent: "rgba(255,255,255,0.2)",
+  transparent: "rgba(255,255,255,0.3)",
 };
 const darkTheme = {
   name: "dark",

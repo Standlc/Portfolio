@@ -22,7 +22,7 @@ const LeftContainer = styled.div`
   flex: 1;
   width: 50px;
   color: ${(props) => props.theme.color};
-  ${mid({ width: "100%", flex: "none" })}
+  ${mid({ width: "100%", flex: "none", marginBottom: '200px'})}
 `;
 const Left = styled.div`
   max-width: 500px;
@@ -31,7 +31,7 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  ${mobile({ padding: "30px" })}
+  ${mobile({ padding: "30px"})};
 `;
 const TitleContainer = styled.div`
   overflow: hidden;
@@ -39,7 +39,7 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
   font-size: 80px;
   font-weight: 500;
-  transition: transform 500ms;
+  transition: transform  500ms;
   ${mobile({ fontSize: "65px" })}
 `;
 const Category = styled.p`
@@ -105,12 +105,12 @@ const Technologies = styled.div`
 `;
 const Technology = styled.div`
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   color: ${(props) => props.theme.color};
   display: flex;
   align-items: center;
   justify-content: center;
-  ${mobile({ fontSize: "15px" })}
+  ${mobile({ fontSize: "16px" })}
 `;
 const Logo = styled.img`
   height: 30px;
@@ -211,6 +211,9 @@ const Project = ({ scroll, screen, project }) => {
                 {project.technologies.map((item) => (
                   <Technology key={item.name} theme={theme}>
                     {item.name}
+                    {item.name === "StyledComponents" && (
+                      <div style={{ marginLeft: "10px" }}>💅</div>
+                    )}
                     <Logo src={item.logo} />
                   </Technology>
                 ))}

@@ -30,8 +30,8 @@ const Left = styled.div`
 const Language = styled.div`
   cursor: pointer;
   font-size: 15px;
-  padding: 0px 15px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 17px;
   display: flex;
   justify-content: center;

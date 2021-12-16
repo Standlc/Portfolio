@@ -1,15 +1,14 @@
 import { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../context/themeContext";
-import { useElementOnScreen } from "../hooks";
 import { mid, mobile } from "../responsive";
 
 const Container = styled.div`
   position: relative;
   z-index: 99;
-  height: 200vh;
+  height: 270vh;
   width: 100%;
-  background-color: ${(props) => props.theme.color};
+  background-color: ${(props) => props.theme.background};
 `;
 const Background = styled.div`
   position: sticky;
@@ -34,56 +33,79 @@ const Title = styled.h1`
   ${mid({ fontSize: "150px" })}
   ${mobile({ fontSize: "100px" })}
 `;
-const DescriptionContainer = styled.div`
-  max-width: 700px;
-  width: 80%;
-  padding: 30px;
-  color: ${(props) => props.theme.color};
-  transform: translateY(${(props) => (props.isVisible ? "0px" : "100px")});
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transition: transform 500ms, opacity 500ms;
-`;
 const Description = styled.p`
   font-size: 30px;
+  padding: 30px;
+  position: absolute;
+  text-align: center;
+  max-width: 800px;
   font-weight: 400;
+  opacity: 0;
+  transform: translateY(150px);
+  color: ${(props) => props.theme.color};
   line-height: 1.5;
   ${mid({ fontSize: "28px" })}
   ${mobile({ fontSize: "26px" })}
+  transition: transform cubic-bezier(0.2, 0, 0, 1) 800ms, opacity 500ms;
 `;
 
-const About = ({ scroll, screen }) => {
+const About = ({ scroll }) => {
   const { theme, language } = useContext(ThemeContext);
   const containerRef = useRef();
   const backgroundRef = useRef();
-  const descriptionContainer = useRef();
+  const firstParagraphRef = useRef(null);
+  const secondParagraphRef = useRef(null);
   const title = useRef();
-  //ANIMATION HOOK
-  const isVisible = useElementOnScreen(screen, descriptionContainer, scroll, 0);
 
   useEffect(() => {
     title.current.style.transform = `translateX(${scroll * 0.2 - 280}px)`;
   }, [scroll]);
 
+  useEffect(() => {
+    if (
+      containerRef.current.getBoundingClientRect().top <= 0 &&
+      -containerRef.current.getBoundingClientRect().top <
+        containerRef.current.getBoundingClientRect().height / 3
+    ) {
+      firstParagraphRef.current.style.opacity = 1;
+      secondParagraphRef.current.style.opacity = 0;
+      firstParagraphRef.current.style.transform = "translateY(0px)";
+      secondParagraphRef.current.style.transform = "translateY(150px)";
+    }
+    if (
+      -containerRef.current.getBoundingClientRect().top >=
+      containerRef.current.getBoundingClientRect().height / 3
+    ) {
+      firstParagraphRef.current.style.opacity = 0;
+      firstParagraphRef.current.style.transform = "translateY(-150px)";
+
+      secondParagraphRef.current.style.opacity = 1;
+      secondParagraphRef.current.style.transform = "translateY(0)";
+    }
+  }, [scroll]);
 
   return (
     <Container ref={containerRef} theme={theme}>
       <Background theme={theme} ref={backgroundRef}>
         <Title ref={title} theme={theme}>
-        {language === "EN"
-              ? "ABOUT ME"
-              : "QUI JE SUIS"}
+          {language === "EN" ? "ABOUT ME" : "QUI JE SUIS"}
         </Title>
-        <DescriptionContainer
-          isVisible={isVisible}
-          ref={descriptionContainer}
+        <Description ref={firstParagraphRef} theme={theme}>
+          {language === "EN"
+            ? "Self taught web developer passionate about computer science and innovation."
+            : "Développeur web passionné par la technologie et l'innovation, j'ai débuté mon parcours informatique en apprenant le code par moi-même."}
+        </Description>
+        <Description
+          style={{
+            fontSize: "35px",
+          }}
+          ref={secondParagraphRef}
           theme={theme}
         >
-          <Description theme={theme}>
-            {language === "EN"
-              ? "Self taught web developer passionate about computer science and innovation, I began my atypical path learning to code by myself. Here are some of my projects."
-              : "Développeur web passionné pour l'informatique et l'innovation, j'ai débuté mon parcours atypique en apprenant le code par moi-même. Voici quelques un de mes projets."}
-          </Description>
-        </DescriptionContainer>
+          {language === "EN"
+            ? "Here are some of my projects."
+            : "Voici quelques uns de mes projets."}
+        </Description>
       </Background>
     </Container>
   );

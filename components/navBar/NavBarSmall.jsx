@@ -45,7 +45,7 @@ const Link = styled.div`
   align-items: center;
   letter-spacing: 3px;
   margin: 5vh;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: ${(props) => props.theme.color};
   &:hover ${Underline} {
@@ -61,12 +61,12 @@ const Menu = styled.div`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 999;
-  padding: 15px;
+  padding: 12px;
   border-radius: 17px;
   background-color: ${(props) => props.theme.transparent};
   backdrop-filter: blur(10px);
-  transition: width 400ms;
+  transition: width 500ms;
+  transition-delay: 400ms;
 `;
 const MenuComponent = styled.div`
   height: 1px;
@@ -79,7 +79,21 @@ const MenuComponent = styled.div`
         : "rotate(-45deg)"
       : "rotate(0deg)"};
   transform-origin: left;
-  transition: transform 400ms;
+  transition: transform cubic-bezier(0.5, 0, 0, 1) 600ms;
+`;
+const Language = styled.div`
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 15px;
+  width: 45px;
+  height: 45px;
+  border-radius: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.theme.transparent};
+  color: ${(props) => props.theme.color};
+  backdrop-filter: blur(10px);
 `;
 
 const NavBarSmall = ({ screen, scroll }) => {
@@ -117,11 +131,23 @@ const NavBarSmall = ({ screen, scroll }) => {
   };
   return (
     <Wrapper theme={theme}>
-      <Menu showNav={showNav} theme={theme} onClick={handleOpenNav}>
-        <MenuComponent theme={theme} top showNav={showNav} />
-        <MenuComponent theme={theme} showNav={showNav} />
-      </Menu>
-      <LinksWrapper theme={theme} ref={linksWrapperRef}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: "999",
+        }}
+      >
+        <Menu showNav={showNav} theme={theme} onClick={handleOpenNav}>
+          <MenuComponent theme={theme} top showNav={showNav} />
+          <MenuComponent theme={theme} showNav={showNav} />
+        </Menu>
+        <Language theme={theme} onClick={toggleLanguage}>
+          {language}
+        </Language>
+      </div>
+      <LinksWrapper onClick={handleOpenNav} theme={theme} ref={linksWrapperRef}>
         {navBarData[language].map((item) => (
           <Link
             key={item.id}

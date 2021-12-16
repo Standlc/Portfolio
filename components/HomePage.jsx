@@ -34,16 +34,17 @@ const Greeting = styled.p`
   margin-bottom: 15px;
   font-size: 35px;
   font-weight: 300;
+  ${mobile({ fontSize: "30px" })}
 `;
 const Title = styled.div`
   margin-bottom: 20px;
   font-size: 90px;
   font-weight: 500;
-  background: linear-gradient(45deg, rgb(76, 0, 255), rgb(0, 255, 115));
+  background: linear-gradient(45deg, rgb(0, 17, 255), rgb(0, 255, 234));
   -webkit-background-clip: text;
   color: transparent;
   ${mid({ fontSize: "75px" })}
-  ${mobile({ fontSize: "60px" })}
+  ${mobile({ fontSize: "57px" })}
 `;
 const Down = styled.img`
   cursor: pointer;
@@ -163,7 +164,7 @@ const HomePage = ({ scroll, screen, aboutCntnrRef }) => {
             </Greeting>
             <Title>
               {language === "EN"
-                ? " Full-Stack Web Developer."
+                ? " Full Stack Web Developer."
                 : "Développeur Web Full Stack."}
             </Title>
           </TitleContainer>
