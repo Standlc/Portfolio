@@ -92,8 +92,8 @@ const About = ({ scroll }) => {
         </Title>
         <Description ref={firstParagraphRef} theme={theme}>
           {language === "EN"
-            ? "Self taught web developer passionate about computer science and innovation."
-            : "Développeur web passionné par la technologie et l'innovation, j'ai débuté mon parcours informatique en apprenant le code par moi-même."}
+            ? "Web developer passionate about computer science and innovation."
+            : "Développeur web passionné par la technologie et l'innovation."}
         </Description>
         <Description
           style={{
