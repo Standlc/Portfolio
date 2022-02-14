@@ -164,8 +164,8 @@ const HomePage = ({ scroll, screen, aboutCntnrRef }) => {
             </Greeting>
             <Title>
               {language === "EN"
-                ? " Full Stack Web Developer."
-                : "Développeur Web Full Stack."}
+                ? " Front End Web Developer."
+                : "Développeur Web Full End."}
             </Title>
           </TitleContainer>
         </Left>
